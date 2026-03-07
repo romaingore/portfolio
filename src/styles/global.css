@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary-50: #eef2ff;
+    --color-primary-100: #e0e7ff;
+    --color-primary-200: #c7d2fe;
+    --color-primary-300: #a5b4fc;
+    --color-primary-400: #818cf8;
+    --color-primary-500: #6366f1;
+    --color-primary-600: #4f46e5;
+    --color-primary-700: #4338ca;
+    --color-primary-800: #3730a3;
+    --color-primary-900: #312e81;
+    --color-primary-950: #1e1b4b;
+
+    --color-background: var(--color-background);
+    --color-text: var(--color-text);
+    --color-muted: var(--color-muted);
+
+    --font-sans: "Inter Variable", "Inter", sans-serif;
+}
+
+@layer base {
+    :root {
+        /* Base Colors (Neutral/White) */
+        --color-background: #ffffff;
+        --color-text: #0f172a;
+        /* slate-900 */
+        --color-muted: #64748b;
+        /* slate-500 */
+    }
+
+    .dark {
+        /* Dark Mode Colors */
+        --color-background: #0f172a;
+        /* slate-900 */
+        --color-text: #f8fafc;
+        /* slate-50 */
+        --color-muted: #94a3b8;
+        /* slate-400 */
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-background text-text antialiased;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+}
+
+/* Accessibility: Skip Link */
+.skip-link {
+    @apply absolute left-4 top-4 z-50 -translate-y-[150%] rounded bg-primary-600 px-4 py-2 text-white transition-transform focus:translate-y-0;
+}
