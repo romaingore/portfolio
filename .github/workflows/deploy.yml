@@ -32,7 +32,8 @@ jobs:
     - name: Deploy to VPS via Rsync
       run: |
         rsync -avz --delete ./dist/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.TARGET_DIR }}/dist
+        rsync -avz ./docker-compose.yml ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.TARGET_DIR }}/docker-compose.yml
 
-    - name: Start container if not running
+    - name: Start container
       run: |
         ssh -i ~/.ssh/id_ed25519 ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "cd ${{ secrets.TARGET_DIR }} && docker compose up -d"
