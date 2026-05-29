@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // ── Hero: entrance timeline ──────────────────────────────────
-const heroTl = gsap.timeline({ delay: 0.1 });
+const heroTl = gsap.timeline({ paused: true });
 
 heroTl
     .from('[data-hero="badge"]',  { opacity: 0, y: 16, duration: 0.5,  ease: "power2.out" })
@@ -12,6 +12,35 @@ heroTl
     .from('[data-hero="text"]',   { opacity: 0, y: 16, duration: 0.5,  ease: "power2.out" }, "-=0.3")
     .from('[data-hero="cta"]',    { opacity: 0, y: 16, duration: 0.5,  ease: "power2.out" }, "-=0.25")
     .from('[data-hero="mosaic"]', { opacity: 0,         duration: 0.7,  ease: "power2.out" }, "-=0.4");
+
+// Attend que toutes les images de la hero soient chargées (max 3s)
+function waitForHeroImages(): Promise<void> {
+    const images = Array.from(
+        document.querySelectorAll<HTMLImageElement>("#hero-section img")
+    );
+    const pending = images.filter(img => !img.complete);
+    if (!pending.length) return Promise.resolve();
+
+    return new Promise(resolve => {
+        const timeout = setTimeout(resolve, 3000);
+        let remaining = pending.length;
+        pending.forEach(img => {
+            const onDone = () => {
+                if (--remaining === 0) {
+                    clearTimeout(timeout);
+                    resolve();
+                }
+            };
+            img.addEventListener("load",  onDone, { once: true });
+            img.addEventListener("error", onDone, { once: true });
+        });
+    });
+}
+
+waitForHeroImages().then(() => {
+    document.getElementById("hero-section")?.classList.remove("hero-loading");
+    heroTl.play();
+});
 
 
 // ── Scroll animations ────────────────────────────────────────

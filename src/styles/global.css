@@ -53,9 +53,33 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+    /* Isole les repaints du SVG du reste du document */
+    contain: paint;
 }
 
-.arc1 { animation: pass1 12s linear infinite; }
+/* Blur CSS sur les arcs — bien plus rapide que feGaussianBlur SVG.
+   Le GPU peut composite ces layers sans recalcul pixel à chaque frame. */
+.arc1 {
+    filter: blur(18px);
+    will-change: transform, opacity;
+    animation: pass1 12s linear infinite;
+}
+.arc2 {
+    filter: blur(18px);
+    will-change: transform, opacity;
+    animation: pass2 12s linear infinite;
+}
+.arc3 {
+    filter: blur(18px);
+    will-change: transform, opacity;
+    animation: pass3 12s linear infinite;
+}
+
+/* Sur mobile : blur réduit pour économiser le GPU */
+@media (max-width: 768px) {
+    .arc1, .arc2, .arc3 { filter: blur(10px); }
+}
+
 @keyframes pass1 {
     0%    { transform: translate(850px,  900px); opacity: 0; }
     4%    { opacity: 1; }
@@ -65,7 +89,6 @@
     100%  { transform: translate(850px,  900px); opacity: 0; }
 }
 
-.arc2 { animation: pass2 12s linear infinite; }
 @keyframes pass2 {
     0%    { transform: translate(0px,  900px); opacity: 0; }
     33%   { transform: translate(0px,  900px); opacity: 0; }
@@ -76,7 +99,6 @@
     100%  { transform: translate(0px,  900px); opacity: 0; }
 }
 
-.arc3 { animation: pass3 12s linear infinite; }
 @keyframes pass3 {
     0%    { transform: translate(-850px,  900px); opacity: 0; }
     66%   { transform: translate(-850px,  900px); opacity: 0; }
@@ -102,14 +124,17 @@
 
 .arc-halo-1 {
     background: rgba(90, 155, 220, 0.35);
+    will-change: opacity;
     animation: halo1 12s linear infinite;
 }
 .arc-halo-2 {
     background: rgba(198, 172, 108, 0.35);
+    will-change: opacity;
     animation: halo2 12s linear infinite;
 }
 .arc-halo-3 {
     background: rgba(208, 148, 162, 0.35);
+    will-change: opacity;
     animation: halo3 12s linear infinite;
 }
 
@@ -141,6 +166,17 @@
 .arc-fade-left   { position: absolute; top: 0; left: 0; bottom: 0; width: 10%; background: linear-gradient(to left, rgba(245,245,245,0), #f5f5f5); z-index: 2; }
 .arc-fade-right  { position: absolute; top: 0; right: 0; bottom: 0; width: 10%; background: linear-gradient(to right, rgba(245,245,245,0), #f5f5f5); z-index: 2; }
 
+/* Hero : animations en pause tant que les images ne sont pas chargées */
+#hero-section.hero-loading .arc1,
+#hero-section.hero-loading .arc2,
+#hero-section.hero-loading .arc3,
+#hero-section.hero-loading .arc-halo-1,
+#hero-section.hero-loading .arc-halo-2,
+#hero-section.hero-loading .arc-halo-3,
+#hero-section.hero-loading .animate-marquee {
+    animation-play-state: paused;
+}
+
 /* Animations */
 @keyframes marquee {
     from { transform: translateX(0); }
@@ -148,6 +184,7 @@
 }
 
 .animate-marquee {
+    will-change: transform;
     animation: marquee 30s linear infinite;
 }
 
