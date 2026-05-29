@@ -1,53 +1,157 @@
 ---
-import { Image } from "astro:assets";
 ---
 
-<section
-    class="relative overflow-hidden bg-white dark:bg-gray-950 pt-16 pb-32 sm:pt-24 sm:pb-40 lg:pt-32 lg:pb-56"
->
-    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-4xl text-center">
-            <h1
-                class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl"
-            >
-                <span class="block">Build faster with</span>
-                <span class="block text-primary-600 dark:text-primary-400"
-                    >AstroLaunch</span
-                >
-            </h1>
-            <p
-                class="mx-auto mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-300 sm:text-xl"
-            >
-                The ultimate landing page template for B2C startups. Fast,
-                accessible, and SEO-optimized out of the box. Start converting
-                visitors today.
-            </p>
-            <div class="mt-10 flex justify-center gap-4">
-                <a
-                    href="#pricing"
-                    class="rounded-md bg-primary-600 px-8 py-3 text-base font-medium text-white shadow hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:bg-primary-500 dark:hover:bg-primary-600 dark:focus:ring-offset-gray-900"
-                >
-                    Get Started
-                </a>
-                <a
-                    href="#features"
-                    class="rounded-md bg-gray-100 px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-offset-gray-900"
-                >
-                    Learn More
-                </a>
+<section id="hero-section" class="relative flex min-h-screen flex-col bg-primary-50">
+
+    <!-- Arc background -->
+    <div class="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+        <svg class="arc-bg-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="arc-blur" x="-60%" y="-60%" width="220%" height="220%">
+                    <feGaussianBlur stdDeviation="18"/>
+                </filter>
+            </defs>
+            <g class="arc1" filter="url(#arc-blur)">
+                <circle cx="960" cy="2400" r="1650" fill="none" stroke="rgba(90,155,220,0.65)"  stroke-width="85"/>
+                <circle cx="960" cy="2400" r="1820" fill="none" stroke="rgba(110,172,238,0.32)" stroke-width="50"/>
+                <circle cx="960" cy="2400" r="1960" fill="none" stroke="rgba(130,188,255,0.15)" stroke-width="35"/>
+            </g>
+            <g class="arc2" filter="url(#arc-blur)">
+                <circle cx="960" cy="2400" r="1650" fill="none" stroke="rgba(198,172,108,0.6)"  stroke-width="85"/>
+                <circle cx="960" cy="2400" r="1820" fill="none" stroke="rgba(214,188,128,0.3)"  stroke-width="50"/>
+                <circle cx="960" cy="2400" r="1960" fill="none" stroke="rgba(226,204,148,0.14)" stroke-width="35"/>
+            </g>
+            <g class="arc3" filter="url(#arc-blur)">
+                <circle cx="960" cy="2400" r="1650" fill="none" stroke="rgba(208,148,162,0.55)" stroke-width="85"/>
+                <circle cx="960" cy="2400" r="1820" fill="none" stroke="rgba(224,166,178,0.28)" stroke-width="50"/>
+                <circle cx="960" cy="2400" r="1960" fill="none" stroke="rgba(237,183,193,0.13)" stroke-width="35"/>
+            </g>
+        </svg>
+        <!-- Halos de couleur en haut, synchronisés avec les arcs -->
+        <div class="arc-halo arc-halo-1"></div>
+        <div class="arc-halo arc-halo-2"></div>
+        <div class="arc-halo arc-halo-3"></div>
+        <div class="arc-fade-top"></div>
+        <div class="arc-fade-bottom"></div>
+        <div class="arc-fade-left"></div>
+        <div class="arc-fade-right"></div>
+    </div>
+
+
+<div class="relative z-20 mx-auto flex flex-1 max-w-6xl flex-col px-4 sm:px-6 lg:px-8">
+        <div class="grid flex-1 grid-cols-1 items-center gap-12 pt-32 pb-24 lg:grid-cols-2 lg:pt-40 lg:pb-32 text-center lg:text-left">
+
+            <!-- Colonne gauche : texte -->
+            <div>
+                <div data-hero="badge" class="mb-8 inline-flex items-center gap-4 rounded-full border border-primary-200 bg-white px-5 py-2.5 shadow-sm lg:inline-flex">
+                    <span class="flex items-center gap-2 text-sm font-bold text-primary-950">
+                        <span class="relative flex h-2 w-2">
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                        </span>
+                        Disponible maintenant
+                    </span>
+                    <span class="h-4 w-px bg-primary-200"></span>
+                    <a href="mailto:romain.gore@outlook.com" class="text-sm text-primary-500 transition-colors hover:text-primary-700">
+                        Démarrer un projet →
+                    </a>
+                </div>
+
+                <h1 data-hero="title" class="font-serif font-semibold leading-[1.05] text-primary-950">
+                    <span class="block text-6xl sm:text-7xl lg:text-7xl xl:text-8xl">Votre métier</span>
+                    <span class="block text-6xl sm:text-7xl lg:text-7xl xl:text-8xl">mérite un site</span>
+                    <em class="block text-6xl italic text-primary-500 sm:text-7xl lg:text-7xl xl:text-8xl">
+                        à sa hauteur.
+                    </em>
+                </h1>
+
+                <p data-hero="text" class="mt-8 max-w-md text-base leading-relaxed text-primary-800 lg:text-lg">
+                    Des sites sur mesure, rapides, visibles sur Google, livrés en 1 à 4 semaines.
+                </p>
+
+                <div data-hero="cta" class="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                    <a
+                        href="#offres"
+                        class="rounded-sm bg-primary-500 px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-600"
+                    >
+                        Voir les offres
+                    </a>
+                    <a
+                        href="mailto:romain.gore@outlook.com"
+                        class="text-sm font-semibold text-primary-700 underline-offset-4 hover:text-primary-500 hover:underline"
+                    >
+                        Me contacter →
+                    </a>
+                </div>
             </div>
+
+            <!-- Colonne droite : mosaïque artisans -->
+            <div data-hero="mosaic" class="relative hidden lg:flex lg:items-center lg:justify-center">
+                <div class="relative h-[500px] w-[420px]">
+
+                    <!-- Grande photo centre-gauche -->
+                    <div class="absolute left-[40px] top-[80px] h-[240px] w-[190px] overflow-hidden rounded-3xl shadow-xl z-20">
+                        <img src="/assets/artisan-hero.png" alt="Artisan" class="h-full w-full object-cover object-top" />
+                    </div>
+                    <!-- Grande photo droite -->
+                    <div class="absolute right-[10px] top-[40px] h-[200px] w-[170px] overflow-hidden rounded-3xl shadow-lg z-10">
+                        <img src="/assets/AdobeStock_714723736.jpeg" alt="Artisan" class="h-full w-full object-cover object-top" />
+                    </div>
+                    <!-- Petite photo haut-centre -->
+                    <div class="absolute left-[160px] top-[10px] h-[110px] w-[110px] overflow-hidden rounded-2xl shadow-md z-30">
+                        <img src="/assets/AdobeStock_187483284.jpeg" alt="Artisan" class="h-full w-full object-cover object-top" />
+                    </div>
+                    <!-- Grande photo bas-centre -->
+                    <div class="absolute bottom-[30px] left-[100px] h-[210px] w-[175px] overflow-hidden rounded-3xl shadow-xl z-20">
+                        <img src="/assets/AdobeStock_22692248.jpeg" alt="Artisan" class="h-full w-full object-cover object-top" />
+                    </div>
+                    <!-- Petite photo bas-gauche -->
+                    <div class="absolute bottom-[60px] left-[0px] h-[120px] w-[115px] overflow-hidden rounded-2xl shadow-md z-10">
+                        <img src="/assets/AdobeStock_41648290.jpeg" alt="Artisan" class="h-full w-full object-cover object-top" />
+                    </div>
+                    <!-- Petite photo bas-droite -->
+                    <div class="absolute bottom-[80px] right-[-30px] h-[190px] w-[170px] overflow-hidden rounded-3xl shadow-lg z-10">
+                        <img src="/assets/AdobeStock_13911840.jpeg" alt="Artisan" class="h-full w-full object-cover object-top" />
+                    </div>
+
+                    <!-- Badge haut gauche : livraison -->
+                    <div class="absolute -left-8 top-[60px] z-40 rounded-2xl border border-primary-200 bg-white px-4 py-3 shadow-lg">
+                        <p class="text-xs font-semibold uppercase tracking-wide text-primary-500">Livraison</p>
+                        <p class="mt-0.5 text-xl font-bold text-primary-950">1 à 4 semaines</p>
+                    </div>
+
+                    <!-- Badge haut droite : devis gratuit -->
+                    <div class="absolute -right-6 top-[30px] z-40 rounded-2xl bg-primary-500 px-4 py-3 shadow-xl">
+                        <p class="text-xs font-bold uppercase tracking-wide text-primary-200">100% gratuit</p>
+                        <p class="mt-0.5 text-sm font-bold text-white">Devis sans engagement</p>
+                    </div>
+
+                    <!-- Badge bas : réponse -->
+                    <div class="absolute -bottom-4 left-[50%] -translate-x-1/2 z-40 rounded-2xl border border-primary-200 bg-white px-4 py-3 shadow-lg">
+                        <p class="text-xs font-semibold uppercase tracking-wide text-primary-500">Réponse garantie</p>
+                        <p class="mt-0.5 text-xl font-bold text-primary-950">sous 48h</p>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- Background gradient for visual interest -->
-    <div
-        class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-        aria-hidden="true"
-    >
-        <div
-            class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-        >
+    <!-- Banderole défilante — collée en bas -->
+    <div class="relative z-20 overflow-hidden border-t border-primary-200 bg-white/60 py-4 backdrop-blur-sm">
+        <div class="flex animate-marquee gap-12 whitespace-nowrap">
+            {[
+                "Couvreur", "Plombier", "Électricien", "Maçon", "Carreleur",
+                "Peintre", "Menuisier", "Charpentier", "Serrurier", "Chauffagiste",
+                "Plaquiste", "Façadier", "Terrassier", "Couvreur", "Plombier",
+                "Électricien", "Maçon", "Carreleur", "Peintre", "Menuisier",
+                "Charpentier", "Serrurier", "Chauffagiste", "Plaquiste", "Façadier", "Terrassier",
+            ].map((metier) => (
+                <span class="text-sm font-medium uppercase tracking-widest text-primary-400">
+                    {metier} <span class="mx-4 text-primary-300">·</span>
+                </span>
+            ))}
         </div>
     </div>
 </section>

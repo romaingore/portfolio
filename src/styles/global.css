@@ -1,43 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary-50: #eef2ff;
-    --color-primary-100: #e0e7ff;
-    --color-primary-200: #c7d2fe;
-    --color-primary-300: #a5b4fc;
-    --color-primary-400: #818cf8;
-    --color-primary-500: #6366f1;
-    --color-primary-600: #4f46e5;
-    --color-primary-700: #4338ca;
-    --color-primary-800: #3730a3;
-    --color-primary-900: #312e81;
-    --color-primary-950: #1e1b4b;
+    /* Palette Noir */
+    --color-primary-50: #f5f5f5;
+    --color-primary-100: #e8e8e8;
+    --color-primary-200: #d0d0d0;
+    --color-primary-300: #a8a8a8;
+    --color-primary-400: #707070;
+    --color-primary-500: #3a3a3a;
+    --color-primary-600: #2a2a2a;
+    --color-primary-700: #1f1f1f;
+    --color-primary-800: #141414;
+    --color-primary-900: #0d0d0d;
+    --color-primary-950: #080808;
 
     --color-background: var(--color-background);
     --color-text: var(--color-text);
     --color-muted: var(--color-muted);
 
-    --font-sans: "Inter Variable", "Inter", sans-serif;
+    --font-sans: "Poppins", sans-serif;
+    --font-serif: "Barlow Condensed", sans-serif;
 }
 
 @layer base {
     :root {
-        /* Base Colors (Neutral/White) */
-        --color-background: #ffffff;
-        --color-text: #0f172a;
-        /* slate-900 */
-        --color-muted: #64748b;
-        /* slate-500 */
-    }
-
-    .dark {
-        /* Dark Mode Colors */
-        --color-background: #0f172a;
-        /* slate-900 */
-        --color-text: #f8fafc;
-        /* slate-50 */
-        --color-muted: #94a3b8;
-        /* slate-400 */
+        --color-background: #f5f5f5;
+        --color-text: #080808;
+        --color-muted: #707070;
     }
 
     html {
@@ -47,6 +36,8 @@
     body {
         @apply bg-background text-text antialiased;
         font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+        cursor: default;
+        overflow-x: hidden;
     }
 }
 
@@ -54,3 +45,109 @@
 .skip-link {
     @apply absolute left-4 top-4 z-50 -translate-y-[150%] rounded bg-primary-600 px-4 py-2 text-white transition-transform focus:translate-y-0;
 }
+
+/* Arc animations — Hero background */
+.arc-bg-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.arc1 { animation: pass1 12s linear infinite; }
+@keyframes pass1 {
+    0%    { transform: translate(850px,  900px); opacity: 0; }
+    4%    { opacity: 1; }
+    29%   { opacity: 1; }
+    33%   { transform: translate(850px, -900px); opacity: 0; }
+    33.1% { transform: translate(850px,  900px); opacity: 0; }
+    100%  { transform: translate(850px,  900px); opacity: 0; }
+}
+
+.arc2 { animation: pass2 12s linear infinite; }
+@keyframes pass2 {
+    0%    { transform: translate(0px,  900px); opacity: 0; }
+    33%   { transform: translate(0px,  900px); opacity: 0; }
+    37%   { opacity: 1; }
+    62%   { opacity: 1; }
+    66%   { transform: translate(0px, -900px); opacity: 0; }
+    66.1% { transform: translate(0px,  900px); opacity: 0; }
+    100%  { transform: translate(0px,  900px); opacity: 0; }
+}
+
+.arc3 { animation: pass3 12s linear infinite; }
+@keyframes pass3 {
+    0%    { transform: translate(-850px,  900px); opacity: 0; }
+    66%   { transform: translate(-850px,  900px); opacity: 0; }
+    70%   { opacity: 1; }
+    95%   { opacity: 1; }
+    100%  { transform: translate(-850px, -900px); opacity: 0; }
+}
+
+/* Halos de couleur — synchronisés avec les arcs */
+.arc-halo {
+    position: absolute;
+    top: -140px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 320px;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.arc-halo-1 {
+    background: rgba(90, 155, 220, 0.35);
+    animation: halo1 12s linear infinite;
+}
+.arc-halo-2 {
+    background: rgba(198, 172, 108, 0.35);
+    animation: halo2 12s linear infinite;
+}
+.arc-halo-3 {
+    background: rgba(208, 148, 162, 0.35);
+    animation: halo3 12s linear infinite;
+}
+
+@keyframes halo1 {
+    0%    { opacity: 0; }
+    4%    { opacity: 1; }
+    29%   { opacity: 1; }
+    33%   { opacity: 0; }
+    100%  { opacity: 0; }
+}
+@keyframes halo2 {
+    0%    { opacity: 0; }
+    33%   { opacity: 0; }
+    37%   { opacity: 1; }
+    62%   { opacity: 1; }
+    66%   { opacity: 0; }
+    100%  { opacity: 0; }
+}
+@keyframes halo3 {
+    0%    { opacity: 0; }
+    66%   { opacity: 0; }
+    70%   { opacity: 1; }
+    95%   { opacity: 1; }
+    100%  { opacity: 0; }
+}
+
+.arc-fade-top    { position: absolute; top: 0; left: 0; right: 0; height: 22%; background: linear-gradient(to top, rgba(245,245,245,0), #f5f5f5); z-index: 2; }
+.arc-fade-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 25%; background: linear-gradient(to bottom, rgba(245,245,245,0), #f5f5f5); z-index: 2; }
+.arc-fade-left   { position: absolute; top: 0; left: 0; bottom: 0; width: 10%; background: linear-gradient(to left, rgba(245,245,245,0), #f5f5f5); z-index: 2; }
+.arc-fade-right  { position: absolute; top: 0; right: 0; bottom: 0; width: 10%; background: linear-gradient(to right, rgba(245,245,245,0), #f5f5f5); z-index: 2; }
+
+/* Animations */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+}
+

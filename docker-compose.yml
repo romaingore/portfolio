@@ -1,0 +1,18 @@
+services:
+  portfolio:
+    image: nginx:alpine
+    container_name: portfolio_romain
+    restart: always
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portfolio.rule=Host(`romain-gore.fr`, `www.romain-gore.fr`)"
+      - "traefik.http.routers.portfolio.entrypoints=websecure"
+      - "traefik.http.routers.portfolio.tls.certresolver=myresolver"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true

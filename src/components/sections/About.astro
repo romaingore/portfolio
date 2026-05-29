@@ -1,0 +1,60 @@
+---
+---
+
+<section id="a-propos" class="bg-white py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+
+            <!-- Colonne gauche : photo -->
+            <div data-about="images" class="relative flex justify-center">
+                <div class="h-[520px] w-[360px] overflow-hidden rounded-3xl shadow-2xl">
+                    <img
+                        src="/assets/PhotoPro1.JPG"
+                        alt="Romain Goré, développeur web"
+                        class="h-full w-full object-cover object-top"
+                    />
+                </div>
+            </div>
+
+            <!-- Colonne droite : texte -->
+            <div data-about="text">
+                <p class="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary-500">
+                    À propos
+                </p>
+                <h2 class="font-serif text-4xl font-semibold leading-tight text-primary-950 sm:text-5xl">
+                    Un développeur <em class="italic text-primary-500">proche de vos besoins</em>
+                </h2>
+                <p class="mt-6 text-base leading-relaxed text-primary-800">
+                    Je m'appelle Romain, développeur web indépendant basé en Bretagne. Je me suis spécialisé dans la création de sites pour les artisans et petites entreprises du bâtiment parce que je crois que chaque professionnel mérite une présence en ligne à la hauteur de son savoir-faire.
+                </p>
+                <p class="mt-4 text-base leading-relaxed text-primary-800">
+                    Pas d'agence, pas d'intermédiaire. Vous avez affaire directement à moi, du premier échange jusqu'à la mise en ligne — et après.
+                </p>
+
+                <ul class="mt-8 space-y-3">
+                    {[
+                        "Sites codés sur mesure, ultra-rapides et optimisés Google",
+                        "SEO local ciblé sur votre ville et votre métier",
+                        "100 % pensé mobile — plus de 70 % des recherches locales",
+                        "Un seul interlocuteur, joignable par SMS, mail ou téléphone",
+                        "Analytics et Search Console intégrés dès le départ",
+                        "Hébergement, sauvegardes et mises à jour gérés pour vous",
+                    ].map((point) => (
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500"></span>
+                            <span class="text-sm leading-relaxed text-primary-800">{point}</span>
+                        </li>
+                    ))}
+                </ul>
+
+                <a
+                    href="mailto:romain.gore@outlook.com"
+                    class="mt-10 inline-block rounded-sm bg-primary-500 px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-600"
+                >
+                    Me contacter
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>

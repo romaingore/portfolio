@@ -1,23 +1,63 @@
-<section class="bg-gray-50 py-12 dark:bg-gray-900">
+---
+---
+
+<section id="socialproof" class="bg-white py-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p
-            class="text-center text-base font-semibold text-gray-600 dark:text-gray-400"
+        <div
+            class="grid grid-cols-2 divide-x divide-primary-100 md:grid-cols-4"
         >
-            Trusted by over 1,000+ startups worldwide
-        </p>
-        <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
-            <!-- Placeholder Logos using simple squares with text for now -->
-            {
-                ["Acme", "Tuple", "Mirage", "StaticKit", "Workcation"].map(
-                    (company) => (
-                        <div class="col-span-1 flex justify-center md:col-span-1">
-                            <span class="flex items-center justify-center text-xl font-bold text-gray-400 dark:text-gray-500">
-                                {company}
-                            </span>
-                        </div>
-                    ),
-                )
-            }
+            <div class="stat-item px-6 py-4 text-center first:pl-0 last:pr-0">
+                <p
+                    class="font-serif text-4xl font-semibold text-primary-500"
+                >
+                    100
+                </p>
+                <p class="mt-1 text-sm font-medium text-primary-900">
+                    Score Lighthouse
+                </p>
+                <p class="mt-0.5 text-xs text-primary-600/70">
+                    Perf · SEO · Accessibilité
+                </p>
+            </div>
+            <div class="stat-item px-6 py-4 text-center">
+                <p
+                    class="font-serif text-4xl font-semibold text-primary-500"
+                >
+                    8j
+                </p>
+                <p class="mt-1 text-sm font-medium text-primary-900">
+                    Délai de livraison
+                </p>
+                <p class="mt-0.5 text-xs text-primary-600/70">
+                    gore-couverture.fr
+                </p>
+            </div>
+            <div class="stat-item px-6 py-4 text-center">
+                <p
+                    class="font-serif text-4xl font-semibold text-primary-500"
+                >
+                    100%
+                </p>
+                <p class="mt-1 text-sm font-medium text-primary-900">
+                    Sur mesure
+                </p>
+                <p class="mt-0.5 text-xs text-primary-600/70">
+                    Aucun template, aucun compromis
+                </p>
+            </div>
+            <div class="stat-item px-6 py-4 text-center">
+                <p
+                    class="font-serif text-4xl font-semibold text-primary-500"
+                >
+                    48h
+                </p>
+                <p class="mt-1 text-sm font-medium text-primary-900">
+                    Délai de réponse
+                </p>
+                <p class="mt-0.5 text-xs text-primary-600/70">
+                    SMS, mail ou téléphone
+                </p>
+            </div>
         </div>
     </div>
 </section>

@@ -1,115 +1,133 @@
 export const SITE = {
-    name: 'AstroLaunch',
-    title: 'Boost Your Productivity with AstroLaunch',
-    description: 'The ultimate landing page template for B2C startups. Fast, accessible, and SEO-optimized.',
-    url: 'https://astrolaunch.demo',
+    name: 'Romain Goré',
+    title: 'Romain Goré — Sites web pour artisans',
+    description: 'Je crée des sites web rapides, modernes et optimisés Google pour les artisans et petites entreprises locales.',
+    url: 'https://romain-gore.fr',
     defaultImage: '/assets/og-image.png',
 };
 
 export const MENU_ITEMS = [
-    { text: 'Features', href: '#features' },
-    { text: 'How it Works', href: '#how-it-works' },
-    { text: 'Testimonials', href: '#testimonials' },
-    { text: 'Pricing', href: '#pricing' },
-    { text: 'FAQ', href: '#faq' },
+    { text: 'À propos', href: '#a-propos' },
+    { text: 'Comment ça marche', href: '#processus' },
+    { text: 'Offres', href: '#offres' },
+    { text: 'Réalisations', href: '#realisations' },
+    { text: 'Contact', href: '#contact' },
 ];
 
 export const FEATURES = [
     {
-        icon: 'rocket',
-        title: 'Lightning Fast',
-        description: 'Built with Astro and minimal JS for perfect Web Vitals scores.',
-    },
-    {
-        icon: 'accessibility',
-        title: 'Accessible',
-        description: 'Follows WCAG 2.1 AA+ standards for an inclusive experience.',
+        icon: 'speed',
+        title: 'Ultra-rapide sur mobile',
+        description: 'Un site codé sur mesure, optimisé pour la vitesse. Résultat : un chargement quasi-instantané qui réduit le taux de fuite des visiteurs.',
     },
     {
         icon: 'seo',
-        title: 'SEO Optimized',
-        description: 'Meta tags, semantic HTML, and sitemap generation out of the box.',
-    },
-    {
-        icon: 'design',
-        title: 'Modern Design',
-        description: 'Styled with Tailwind CSS for a clean and professional look.',
+        title: 'Visible sur Google',
+        description: 'SEO local optimisé pour votre ville et votre métier. Fiche Google Maps configurée. Vos clients vous trouvent avant vos concurrents.',
     },
     {
         icon: 'mobile',
-        title: 'Fully Responsive',
-        description: 'Looks great on all devices, from mobile phones to desktops.',
+        title: '100 % pensé mobile',
+        description: "Plus de 70 % des recherches locales se font depuis un téléphone. Votre site s'adapte parfaitement à tous les écrans.",
     },
     {
-        icon: 'code',
-        title: 'Developer Friendly',
-        description: 'TypeScript, ESLint, and Prettier configured for quality code.',
+        icon: 'human',
+        title: 'Un interlocuteur unique',
+        description: 'Pas d\'agence, pas d\'intermédiaire. Vous échangez directement avec moi — par SMS, mail ou téléphone.',
+    },
+    {
+        icon: 'analytics',
+        title: 'Suivi des performances',
+        description: 'Google Analytics et Search Console intégrés dès le départ. Vous savez combien de personnes visitent votre site.',
+    },
+    {
+        icon: 'maintenance',
+        title: 'Tranquillité d\'esprit',
+        description: 'Hébergement, sauvegardes, mises à jour et petites modifications gérés pour vous. Vous travaillez, je m\'occupe de la technique.',
     },
 ];
 
 export const TESTIMONIALS = [
     {
-        name: 'Sarah Johnson',
-        role: 'Product Manager',
-        avatar: 'https://i.pravatar.cc/150?u=sarah',
-        text: "This template saved us weeks of development time. It's incredibly fast and easy to customize.",
-    },
-    {
-        name: 'David Lee',
-        role: 'Startup Founder',
-        avatar: 'https://i.pravatar.cc/150?u=david',
-        text: "The SEO optimization is top-notch. Our landing page ranked on the first page within a week.",
-    },
-    {
-        name: 'Emily Davis',
-        role: 'Marketing Director',
-        avatar: 'https://i.pravatar.cc/150?u=emily',
-        text: "I love the design! It's modern, clean, and converts visitors into customers effectively.",
+        name: 'Alexis Goré',
+        role: 'Couvreur — Gore Couverture, Pays de la Loire',
+        avatar: '',
+        text: "Romain a créé le site de mon entreprise de couverture en quelques jours. C'est rapide, propre, et mes clients me trouvent maintenant facilement sur Google. Je recommande sans hésiter.",
     },
 ];
 
 export const PRICING_PLANS = [
     {
-        name: 'Starter',
-        price: '$0',
-        description: 'Perfect for hobby projects.',
-        features: ['1 Project', 'Basic Analytics', 'Community Support'],
-        cta: 'Get Started',
+        name: 'Pack Essentiel',
+        price: '500 €',
+        suffix: 'paiement unique',
+        description: 'Une présence pro simple et efficace pour démarrer.',
+        features: [
+            'Site one-page (Présentation, Services, Galerie, Contact)',
+            'Design moderne, 100 % mobile',
+            'SEO local optimisé (ville + métier)',
+            'Fiche Google Business Profile',
+            'Google Analytics & Search Console',
+            '2 révisions incluses',
+            'Livraison en 1 à 2 semaines',
+        ],
+        cta: 'Demander un devis',
         popular: false,
     },
     {
-        name: 'Pro',
-        price: '$29',
-        description: 'For growing businesses.',
-        features: ['Unlimited Projects', 'Advanced Analytics', 'Priority Support', 'Custom Domain'],
-        cta: 'Start Free Trial',
+        name: 'Pack Expert',
+        price: '900 €',
+        suffix: 'paiement unique',
+        description: 'Valorisez pleinement votre activité et passez devant la concurrence.',
+        features: [
+            'Site multi-pages (Accueil, Services, Réalisations, Contact)',
+            'Design moderne, 100 % mobile',
+            'SEO technique + local approfondi',
+            'Fiche Google Business Profile',
+            'Google Analytics & Search Console',
+            '2 révisions incluses',
+            'Livraison en 3 à 4 semaines',
+        ],
+        cta: 'Demander un devis',
         popular: true,
     },
     {
-        name: 'Enterprise',
-        price: 'Custom',
-        description: 'For large support teams.',
-        features: ['Dedicated Account Manager', 'SLA', 'SSO Integration', 'Custom Contracts'],
-        cta: 'Contact Sales',
+        name: 'Pack Seconde Vie',
+        price: '100 €',
+        suffix: "d'audit + devis refonte",
+        description: 'Un vieux site lent fait fuir vos clients. On repart de zéro.',
+        features: [
+            'Audit technique complet (vitesse, mobile, SEO)',
+            'Rapport détaillé avec recommandations',
+            'Devis de refonte sur mesure',
+            "Les 100 € sont déduits si vous faites la refonte",
+            'Nouveau code optimisé, design moderne',
+            '2 révisions incluses',
+        ],
+        cta: 'Demander un audit',
         popular: false,
     },
 ];
 
 export const FAQS = [
     {
-        question: 'Is this template free to use?',
-        answer: 'Yes, this is a premium quality template provided for demonstration purposes.',
+        question: 'Pourquoi un site sur mesure plutôt qu\'un constructeur en ligne ?',
+        answer: 'Les constructeurs comme Wix ou Squarespace sont pratiques, mais ils génèrent des sites lents, peu optimisés pour Google, et chargés d\'abonnements mensuels. Un site codé sur mesure est plus rapide, mieux référencé, et vous appartient vraiment.',
     },
     {
-        question: 'Can I use it for commercial projects?',
-        answer: 'Absolutely! You can use it for both personal and commercial projects.',
+        question: 'Je peux modifier mon site moi-même ?',
+        answer: "Les petites modifications (textes, photos) sont incluses dans l'option Sérénité. Je les applique sous 48h ouvrées sur simple message. Pas besoin de savoir coder.",
     },
     {
-        question: 'Do I need to know Astro?',
-        answer: 'Basic knowledge of HTML and CSS is enough to customize the content. Astro basics help for deeper changes.',
+        question: "Que se passe-t-il si je ne veux plus l'hébergement ?",
+        answer: "Vous pouvez résilier avec 1 mois de préavis après la période minimale de 6 mois. Le nom de domaine vous est transféré sur simple demande.",
     },
     {
-        question: 'How do I deploy this?',
-        answer: 'You can deploy seamlessly to Vercel, Netlify, or any static hosting provider.',
+        question: 'Combien de temps pour avoir mon site en ligne ?',
+        answer: 'Entre 1 et 4 semaines selon le pack choisi, à partir du versement de l\'acompte et de la réception de vos éléments (textes, photos, informations).',
+    },
+    {
+        question: 'Je n\'ai pas de photos ni de textes. C\'est un problème ?',
+        answer: "Pas du tout. L'option Plume vous permet d'avoir tous vos textes rédigés à partir d'un simple échange téléphonique. Pour les photos, je peux vous guider sur ce qu'il faut prendre.",
     },
 ];

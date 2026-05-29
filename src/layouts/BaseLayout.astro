@@ -14,14 +14,14 @@ const { title, description, image } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth">
     <head>
         <SEO title={title} description={description} image={image} />
-        <!-- Fonts: Inter -->
+        <!-- Fonts: Righteous + Poppins -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Nunito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
     </head>
@@ -29,7 +29,7 @@ const { title, description, image } = Astro.props;
         class="bg-background text-text selection:bg-primary-500 selection:text-white"
     >
         <!-- Skip to content for accessibility -->
-        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
         <Header />
 
@@ -40,3 +40,7 @@ const { title, description, image } = Astro.props;
         <Footer />
     </body>
 </html>
+
+<script>
+    import "../scripts/animations";
+</script>
