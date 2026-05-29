@@ -1,22 +1,34 @@
 ---
+import { Image } from 'astro:assets';
+import imgCentreGauche from '../../assets/artisan-couvreur-toiture.png';
+import imgDroite       from '../../assets/artisan-electricien-chantier.jpeg';
+import imgHautCentre   from '../../assets/artisan-plombier-travaux.jpeg';
+import imgBasCentre    from '../../assets/artisan-maconnerie-construction.jpeg';
+import imgBasGauche    from '../../assets/artisan-menuisier-bois.jpeg';
+import imgBasDroite    from '../../assets/artisan-peintre-renovation.jpeg';
 ---
 
-<section id="hero-section" class="hero-loading relative flex min-h-screen flex-col bg-primary-50">
+<section id="hero-section" class="relative flex min-h-screen flex-col bg-primary-50">
 
     <!-- Arc background -->
     <div class="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
         <svg class="arc-bg-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <g class="arc1">
+            <defs>
+                <filter id="arc-blur" x="-60%" y="-60%" width="220%" height="220%">
+                    <feGaussianBlur stdDeviation="18"/>
+                </filter>
+            </defs>
+            <g class="arc1" filter="url(#arc-blur)">
                 <circle cx="960" cy="2400" r="1650" fill="none" stroke="rgba(90,155,220,0.65)"  stroke-width="85"/>
                 <circle cx="960" cy="2400" r="1820" fill="none" stroke="rgba(110,172,238,0.32)" stroke-width="50"/>
                 <circle cx="960" cy="2400" r="1960" fill="none" stroke="rgba(130,188,255,0.15)" stroke-width="35"/>
             </g>
-            <g class="arc2">
+            <g class="arc2" filter="url(#arc-blur)">
                 <circle cx="960" cy="2400" r="1650" fill="none" stroke="rgba(198,172,108,0.6)"  stroke-width="85"/>
                 <circle cx="960" cy="2400" r="1820" fill="none" stroke="rgba(214,188,128,0.3)"  stroke-width="50"/>
                 <circle cx="960" cy="2400" r="1960" fill="none" stroke="rgba(226,204,148,0.14)" stroke-width="35"/>
             </g>
-            <g class="arc3">
+            <g class="arc3" filter="url(#arc-blur)">
                 <circle cx="960" cy="2400" r="1650" fill="none" stroke="rgba(208,148,162,0.55)" stroke-width="85"/>
                 <circle cx="960" cy="2400" r="1820" fill="none" stroke="rgba(224,166,178,0.28)" stroke-width="50"/>
                 <circle cx="960" cy="2400" r="1960" fill="none" stroke="rgba(237,183,193,0.13)" stroke-width="35"/>
@@ -86,27 +98,27 @@
 
                     <!-- Grande photo centre-gauche -->
                     <div class="absolute left-[40px] top-[80px] h-[240px] w-[190px] overflow-hidden rounded-3xl shadow-xl z-20">
-                        <img src="/assets/artisan-hero.png" alt="Artisan" class="h-full w-full object-cover object-top" />
+                        <Image src={imgCentreGauche} alt="Artisan" width={380} height={480} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
                     </div>
                     <!-- Grande photo droite -->
                     <div class="absolute right-[10px] top-[40px] h-[200px] w-[170px] overflow-hidden rounded-3xl shadow-lg z-10">
-                        <img src="/assets/AdobeStock_714723736.jpeg" alt="Artisan" class="h-full w-full object-cover object-top" />
+                        <Image src={imgDroite} alt="Artisan" width={340} height={400} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
                     </div>
                     <!-- Petite photo haut-centre -->
                     <div class="absolute left-[160px] top-[10px] h-[110px] w-[110px] overflow-hidden rounded-2xl shadow-md z-30">
-                        <img src="/assets/AdobeStock_187483284.jpeg" alt="Artisan" class="h-full w-full object-cover object-top" />
+                        <Image src={imgHautCentre} alt="Artisan" width={220} height={220} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
                     </div>
                     <!-- Grande photo bas-centre -->
                     <div class="absolute bottom-[30px] left-[100px] h-[210px] w-[175px] overflow-hidden rounded-3xl shadow-xl z-20">
-                        <img src="/assets/AdobeStock_22692248.jpeg" alt="Artisan" class="h-full w-full object-cover object-top" />
+                        <Image src={imgBasCentre} alt="Artisan" width={350} height={420} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
                     </div>
                     <!-- Petite photo bas-gauche -->
                     <div class="absolute bottom-[60px] left-[0px] h-[120px] w-[115px] overflow-hidden rounded-2xl shadow-md z-10">
-                        <img src="/assets/AdobeStock_41648290.jpeg" alt="Artisan" class="h-full w-full object-cover object-top" />
+                        <Image src={imgBasGauche} alt="Artisan" width={230} height={240} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
                     </div>
                     <!-- Petite photo bas-droite -->
                     <div class="absolute bottom-[80px] right-[-30px] h-[190px] w-[170px] overflow-hidden rounded-3xl shadow-lg z-10">
-                        <img src="/assets/AdobeStock_13911840.jpeg" alt="Artisan" class="h-full w-full object-cover object-top" />
+                        <Image src={imgBasDroite} alt="Artisan" width={340} height={380} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
                     </div>
 
                     <!-- Badge haut gauche : livraison -->

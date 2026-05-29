@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import screenshotGoreCouverture from '../../assets/site-gore-couverture-reference.png';
+
 const projects = [
     {
         name: "Gore Couverture",
@@ -7,7 +10,8 @@ const projects = [
         metier: "Couvreur — Centre Bretagne, Loudéac",
         description: "Site vitrine pour une entreprise de couverture artisanale. Livré en 8 jours.",
         year: "2026",
-        image: "/assets/gore-couverture-screenshot.png",
+        image: screenshotGoreCouverture,
+        alt: "Site web gore-couverture.fr — couvreur Centre Bretagne",
     },
 ];
 ---
@@ -35,9 +39,11 @@ const projects = [
                 <div class="group overflow-hidden rounded-2xl border border-primary-100 bg-primary-50">
                     <!-- Screenshot -->
                     <div class="overflow-hidden">
-                        <img
+                        <Image
                             src={project.image}
-                            alt={project.name}
+                            alt={project.alt}
+                            width={800}
+                            quality={85}
                             class="w-full object-cover object-top"
                         />
                     </div>

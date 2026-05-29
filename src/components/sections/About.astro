@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import photoPro from '../../assets/romain-gore-developpeur-web-bretagne.jpg';
 ---
 
 <section id="a-propos" class="bg-white py-24">
@@ -8,9 +10,12 @@
             <!-- Colonne gauche : photo -->
             <div data-about="images" class="relative flex justify-center">
                 <div class="h-[520px] w-[360px] overflow-hidden rounded-3xl shadow-2xl">
-                    <img
-                        src="/assets/PhotoPro1.JPG"
+                    <Image
+                        src={photoPro}
                         alt="Romain Goré, développeur web"
+                        width={720}
+                        height={1040}
+                        quality={85}
                         class="h-full w-full object-cover object-top"
                     />
                 </div>
