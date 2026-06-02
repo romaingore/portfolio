@@ -1,35 +1,70 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// ── Hero: entrance animations ────────────────────────────────
+const heroItems = document.querySelectorAll<HTMLElement>(
+    '[data-hero="badge"], [data-hero="title"], [data-hero="text"], [data-hero="cta"], [data-hero="mosaic"]'
+);
 
-gsap.registerPlugin(ScrollTrigger);
+heroItems.forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+});
 
-// ── Hero: entrance timeline ──────────────────────────────────
-const heroTl = gsap.timeline({ delay: 0.1 });
+const heroDelays: Record<string, number> = {
+    badge:  100,
+    title:  250,
+    text:   450,
+    cta:    600,
+    mosaic: 400,
+};
 
-heroTl
-    .from('[data-hero="badge"]',  { opacity: 0, y: 16, duration: 0.5,  ease: "power2.out" })
-    .from('[data-hero="title"]',  { opacity: 0, y: 28, duration: 0.65, ease: "power2.out" }, "-=0.25")
-    .from('[data-hero="text"]',   { opacity: 0, y: 16, duration: 0.5,  ease: "power2.out" }, "-=0.3")
-    .from('[data-hero="cta"]',    { opacity: 0, y: 16, duration: 0.5,  ease: "power2.out" }, "-=0.25")
-    .from('[data-hero="mosaic"]', { opacity: 0,         duration: 0.7,  ease: "power2.out" }, "-=0.4");
-
-
-// ── Scroll animations ────────────────────────────────────────
-const scrollAnims: Array<{ selector: string; trigger: string; vars: gsap.TweenVars; stagger?: number }> = [
-    { selector: '[data-about="images"]',   trigger: "#a-propos",    vars: { opacity: 0, x: -36, duration: 0.7 } },
-    { selector: '[data-about="text"]',     trigger: "#a-propos",    vars: { opacity: 0, x: 36,  duration: 0.7, delay: 0.1 } },
-    { selector: "#socialproof .stat-item", trigger: "#socialproof", vars: { opacity: 0, y: 20,  duration: 0.5 }, stagger: 0.1 },
-    { selector: "#pricing-grid > div",     trigger: "#pricing-grid",vars: { opacity: 0, y: 32,  duration: 0.55 }, stagger: 0.12 },
-];
-
-scrollAnims.forEach(({ selector, trigger, vars, stagger }) => {
-    const els = document.querySelectorAll(selector);
-    if (!els.length) return;
-    gsap.from(selector, {
-        ...vars,
-        ease: "power2.out",
-        stagger: stagger ?? 0,
-        scrollTrigger: { trigger, start: "top 90%" },
+requestAnimationFrame(() => {
+    heroItems.forEach((el) => {
+        const key = el.dataset.hero as string;
+        const delay = heroDelays[key] ?? 0;
+        setTimeout(() => {
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+        }, delay);
     });
 });
 
+
+// ── Scroll animations ────────────────────────────────────────
+interface ScrollAnim {
+    selector: string;
+    from: Partial<CSSStyleDeclaration>;
+    stagger?: number;
+}
+
+const scrollAnims: ScrollAnim[] = [
+    { selector: '[data-about="images"]', from: { opacity: "0", transform: "translateX(-36px)" } },
+    { selector: '[data-about="text"]',   from: { opacity: "0", transform: "translateX(36px)" } },
+    { selector: "#socialproof .stat-item", from: { opacity: "0", transform: "translateY(20px)" }, stagger: 100 },
+    { selector: "#pricing-grid > div",     from: { opacity: "0", transform: "translateY(32px)" }, stagger: 120 },
+];
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target as HTMLElement;
+            const delay = parseInt(el.dataset.animDelay ?? "0", 10);
+            setTimeout(() => {
+                el.style.opacity = "1";
+                el.style.transform = "none";
+            }, delay);
+            observer.unobserve(el);
+        });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+);
+
+scrollAnims.forEach(({ selector, from, stagger = 0 }) => {
+    const els = document.querySelectorAll<HTMLElement>(selector);
+    els.forEach((el, i) => {
+        Object.assign(el.style, from);
+        el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        el.dataset.animDelay = String(i * stagger);
+        observer.observe(el);
+    });
+});
