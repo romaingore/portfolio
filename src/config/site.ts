@@ -115,10 +115,6 @@ export const FAQS = [
         answer: 'Les constructeurs comme Wix ou Squarespace sont pratiques, mais ils génèrent des sites lents, peu optimisés pour Google, et chargés d\'abonnements mensuels. Un site codé sur mesure est plus rapide, mieux référencé, et vous appartient vraiment.',
     },
     {
-        question: 'Je peux modifier mon site moi-même ?',
-        answer: "Les petites modifications (textes, photos) sont incluses dans l'option Sérénité. Je les applique sous 48h ouvrées sur simple message. Pas besoin de savoir coder.",
-    },
-    {
         question: "Que se passe-t-il si je ne veux plus l'hébergement ?",
         answer: "Vous pouvez résilier avec 1 mois de préavis après la période minimale de 6 mois. Le nom de domaine vous est transféré sur simple demande.",
     },
@@ -128,6 +124,6 @@ export const FAQS = [
     },
     {
         question: 'Je n\'ai pas de photos ni de textes. C\'est un problème ?',
-        answer: "Pas du tout. L'option Plume vous permet d'avoir tous vos textes rédigés à partir d'un simple échange téléphonique. Pour les photos, je peux vous guider sur ce qu'il faut prendre.",
+        answer: "Pas du tout. Je peux rédiger tous vos textes à partir d'un simple échange téléphonique, moyennant un supplément de 50 €. Pour les photos, je peux vous guider sur ce qu'il faut prendre.",
     },
 ];
