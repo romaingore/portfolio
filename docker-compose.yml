@@ -5,6 +5,7 @@ services:
     restart: always
     volumes:
       - ./dist:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.portfolio.rule=Host(`romain-gore.fr`, `www.romain-gore.fr`)"
