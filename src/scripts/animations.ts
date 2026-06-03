@@ -59,6 +59,33 @@ requestAnimationFrame(() => {
 });
 
 
+// ── Counters ─────────────────────────────────────────────────
+const counters = document.querySelectorAll<HTMLElement>(".counter");
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target as HTMLElement;
+        const target = parseInt(el.dataset.target ?? "0", 10);
+        const from = parseInt(el.dataset.from ?? String(target > 0 ? 0 : 0), 10);
+        const startVal = el.dataset.from ? parseInt(el.dataset.from, 10) : 0;
+        const duration = 1200;
+        const start = performance.now();
+
+        function update(now: number) {
+            const progress = Math.min((now - start) / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3);
+            el.textContent = String(Math.round(startVal + ease * (target - startVal)));
+            if (progress < 1) requestAnimationFrame(update);
+        }
+
+        requestAnimationFrame(update);
+        counterObserver.unobserve(el);
+    });
+}, { threshold: 0.5 });
+
+counters.forEach((el) => counterObserver.observe(el));
+
 // ── Scroll animations ────────────────────────────────────────
 interface ScrollAnim {
     selector: string;

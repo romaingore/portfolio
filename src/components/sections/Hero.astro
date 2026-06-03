@@ -1,32 +1,93 @@
 ---
-import { Image } from 'astro:assets';
-import imgCentreGauche from '../../assets/artisan-couvreur-toiture.png';
-import imgDroite       from '../../assets/artisan-electricien-chantier.jpeg';
-import imgHautCentre   from '../../assets/artisan-plombier-travaux.jpeg';
-import imgBasCentre    from '../../assets/artisan-maconnerie-construction.jpeg';
-import imgBasGauche    from '../../assets/artisan-menuisier-bois.jpeg';
-import imgBasDroite    from '../../assets/artisan-peintre-renovation.jpeg';
+import { Image } from "astro:assets";
+import imgCentreGauche from "../../assets/artisan-couvreur-toiture.png";
+import imgDroite from "../../assets/artisan-electricien-chantier.jpeg";
+import imgHautCentre from "../../assets/artisan-plombier-travaux.jpeg";
+import imgBasCentre from "../../assets/artisan-maconnerie-construction.jpeg";
+import imgBasGauche from "../../assets/artisan-menuisier-bois.jpeg";
+import imgBasDroite from "../../assets/artisan-peintre-renovation.jpeg";
 ---
 
-<section id="hero-section" class="relative flex h-svh min-h-screen flex-col bg-primary-50">
-
+<section
+    id="hero-section"
+    class="relative flex h-svh min-h-screen flex-col bg-primary-50"
+>
     <!-- Arc background -->
     <div class="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-        <svg class="arc-bg-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <svg
+            class="arc-bg-svg"
+            viewBox="0 0 1920 1080"
+            preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <g class="arc1">
-                <circle cx="960" cy="2400" r="1650" fill="none" stroke="rgba(90,155,220,0.65)"  stroke-width="85"/>
-                <circle cx="960" cy="2400" r="1820" fill="none" stroke="rgba(110,172,238,0.32)" stroke-width="50"/>
-                <circle cx="960" cy="2400" r="1960" fill="none" stroke="rgba(130,188,255,0.15)" stroke-width="35"/>
+                <circle
+                    cx="960"
+                    cy="2400"
+                    r="1650"
+                    fill="none"
+                    stroke="rgba(90,155,220,0.65)"
+                    stroke-width="85"></circle>
+                <circle
+                    cx="960"
+                    cy="2400"
+                    r="1820"
+                    fill="none"
+                    stroke="rgba(110,172,238,0.32)"
+                    stroke-width="50"></circle>
+                <circle
+                    cx="960"
+                    cy="2400"
+                    r="1960"
+                    fill="none"
+                    stroke="rgba(130,188,255,0.15)"
+                    stroke-width="35"></circle>
             </g>
             <g class="arc2">
-                <circle cx="960" cy="2400" r="1650" fill="none" stroke="rgba(198,172,108,0.6)"  stroke-width="85"/>
-                <circle cx="960" cy="2400" r="1820" fill="none" stroke="rgba(214,188,128,0.3)"  stroke-width="50"/>
-                <circle cx="960" cy="2400" r="1960" fill="none" stroke="rgba(226,204,148,0.14)" stroke-width="35"/>
+                <circle
+                    cx="960"
+                    cy="2400"
+                    r="1650"
+                    fill="none"
+                    stroke="rgba(198,172,108,0.6)"
+                    stroke-width="85"></circle>
+                <circle
+                    cx="960"
+                    cy="2400"
+                    r="1820"
+                    fill="none"
+                    stroke="rgba(214,188,128,0.3)"
+                    stroke-width="50"></circle>
+                <circle
+                    cx="960"
+                    cy="2400"
+                    r="1960"
+                    fill="none"
+                    stroke="rgba(226,204,148,0.14)"
+                    stroke-width="35"></circle>
             </g>
             <g class="arc3">
-                <circle cx="960" cy="2400" r="1650" fill="none" stroke="rgba(208,148,162,0.55)" stroke-width="85"/>
-                <circle cx="960" cy="2400" r="1820" fill="none" stroke="rgba(224,166,178,0.28)" stroke-width="50"/>
-                <circle cx="960" cy="2400" r="1960" fill="none" stroke="rgba(237,183,193,0.13)" stroke-width="35"/>
+                <circle
+                    cx="960"
+                    cy="2400"
+                    r="1650"
+                    fill="none"
+                    stroke="rgba(208,148,162,0.55)"
+                    stroke-width="85"></circle>
+                <circle
+                    cx="960"
+                    cy="2400"
+                    r="1820"
+                    fill="none"
+                    stroke="rgba(224,166,178,0.28)"
+                    stroke-width="50"></circle>
+                <circle
+                    cx="960"
+                    cy="2400"
+                    r="1960"
+                    fill="none"
+                    stroke="rgba(237,183,193,0.13)"
+                    stroke-width="35"></circle>
             </g>
         </svg>
         <!-- Halos de couleur en haut, synchronisés avec les arcs -->
@@ -36,24 +97,40 @@ import imgBasDroite    from '../../assets/artisan-peintre-renovation.jpeg';
         <div class="arc-fade-bottom"></div>
     </div>
 
-
-<div class="relative z-20 mx-auto flex flex-1 max-w-6xl flex-col px-6">
-        <div class="grid flex-1 grid-cols-1 items-center gap-12 pt-32 pb-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:pt-40 lg:pb-32 text-center lg:text-left">
-
+    <div class="relative z-20 mx-auto flex flex-1 max-w-6xl flex-col px-6">
+        <div
+            class="grid flex-1 grid-cols-1 items-center gap-12 pt-20 pb-40 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:pt-20 lg:pb-20 text-center lg:text-left"
+        >
             <!-- Colonne gauche : texte -->
             <div class="min-w-0 overflow-hidden">
-
-                <h1 data-hero="title" class="font-serif font-semibold leading-[1.05] text-primary-950">
-                    <span class="block text-[clamp(3.5rem,6.5vw,5.5rem)]">Votre métier</span>
-                    <span class="block text-[clamp(3.5rem,6.5vw,5.5rem)]">mérite</span>
-                    <em id="hero-typewriter" class="block italic text-[clamp(3.5rem,6.5vw,5.5rem)] bg-gradient-to-b from-primary-950 to-primary-400 bg-clip-text text-transparent min-h-[1.1em]"></em>
+                <h1
+                    data-hero="title"
+                    class="font-serif font-semibold leading-[1.05] text-primary-950"
+                >
+                    <span class="block text-[clamp(3.5rem,6.5vw,5.5rem)]"
+                        >Votre métier</span
+                    >
+                    <span class="block text-[clamp(3.5rem,6.5vw,5.5rem)]"
+                        >mérite</span
+                    >
+                    <em
+                        id="hero-typewriter"
+                        class="block italic text-[clamp(3.5rem,6.5vw,5.5rem)] bg-gradient-to-b from-primary-950 to-primary-400 bg-clip-text text-transparent min-h-[1.1em]"
+                    ></em>
                 </h1>
 
-                <p data-hero="text" class="mt-8 max-w-md text-base leading-relaxed text-primary-800 lg:text-lg">
-                    Des sites sur mesure, rapides, avec page Google Business optimisée — livrés en 1 à 4 semaines.
+                <p
+                    data-hero="text"
+                    class="mt-8 max-w-md text-base leading-relaxed text-primary-800 lg:text-lg"
+                >
+                    Des sites sur mesure, rapides, avec page Google Business
+                    optimisée — livrés en 1 à 4 semaines.
                 </p>
 
-                <div data-hero="cta" class="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                <div
+                    data-hero="cta"
+                    class="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start"
+                >
                     <a
                         href="#offres"
                         class="rounded-sm bg-primary-500 px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-600"
@@ -65,62 +142,156 @@ import imgBasDroite    from '../../assets/artisan-peintre-renovation.jpeg';
                         class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-700 underline-offset-4 hover:text-primary-500 hover:underline"
                     >
                         Me contacter
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-3.5 w-3.5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+                        >
                     </a>
                 </div>
             </div>
 
             <!-- Colonne droite : mosaïque artisans -->
-            <div data-hero="mosaic" class="relative hidden lg:flex lg:items-center lg:justify-center">
+            <div
+                data-hero="mosaic"
+                class="relative hidden lg:flex lg:items-center lg:justify-center"
+            >
                 <div class="relative h-[500px] w-[420px]">
-
                     <!-- Grande photo centre-gauche -->
-                    <div class="absolute left-[40px] top-[80px] h-[240px] w-[190px] overflow-hidden rounded-3xl shadow-xl z-20">
-                        <Image src={imgCentreGauche} alt="Artisan" width={380} height={480} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
+                    <div
+                        class="absolute left-[40px] top-[80px] h-[240px] w-[190px] overflow-hidden rounded-3xl shadow-xl z-20"
+                    >
+                        <Image
+                            src={imgCentreGauche}
+                            alt="Artisan"
+                            width={380}
+                            height={480}
+                            quality={85}
+                            class="h-full w-full object-cover object-top"
+                            loading="eager"
+                        />
                     </div>
                     <!-- Grande photo droite -->
-                    <div class="absolute right-[10px] top-[40px] h-[200px] w-[170px] overflow-hidden rounded-3xl shadow-lg z-10">
-                        <Image src={imgDroite} alt="Artisan" width={340} height={400} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
+                    <div
+                        class="absolute right-[10px] top-[40px] h-[200px] w-[170px] overflow-hidden rounded-3xl shadow-lg z-10"
+                    >
+                        <Image
+                            src={imgDroite}
+                            alt="Artisan"
+                            width={340}
+                            height={400}
+                            quality={85}
+                            class="h-full w-full object-cover object-top"
+                            loading="eager"
+                        />
                     </div>
                     <!-- Petite photo haut-centre -->
-                    <div class="absolute left-[160px] top-[10px] h-[110px] w-[110px] overflow-hidden rounded-2xl shadow-md z-30">
-                        <Image src={imgHautCentre} alt="Artisan" width={220} height={220} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
+                    <div
+                        class="absolute left-[160px] top-[10px] h-[110px] w-[110px] overflow-hidden rounded-2xl shadow-md z-30"
+                    >
+                        <Image
+                            src={imgHautCentre}
+                            alt="Artisan"
+                            width={220}
+                            height={220}
+                            quality={85}
+                            class="h-full w-full object-cover object-top"
+                            loading="eager"
+                        />
                     </div>
                     <!-- Grande photo bas-centre -->
-                    <div class="absolute bottom-[30px] left-[100px] h-[210px] w-[175px] overflow-hidden rounded-3xl shadow-xl z-20">
-                        <Image src={imgBasCentre} alt="Artisan" width={350} height={420} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
+                    <div
+                        class="absolute bottom-[30px] left-[100px] h-[210px] w-[175px] overflow-hidden rounded-3xl shadow-xl z-20"
+                    >
+                        <Image
+                            src={imgBasCentre}
+                            alt="Artisan"
+                            width={350}
+                            height={420}
+                            quality={85}
+                            class="h-full w-full object-cover object-top"
+                            loading="eager"
+                        />
                     </div>
                     <!-- Petite photo bas-gauche -->
-                    <div class="absolute bottom-[60px] left-[0px] h-[120px] w-[115px] overflow-hidden rounded-2xl shadow-md z-10">
-                        <Image src={imgBasGauche} alt="Artisan" width={230} height={240} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
+                    <div
+                        class="absolute bottom-[60px] left-[0px] h-[120px] w-[115px] overflow-hidden rounded-2xl shadow-md z-10"
+                    >
+                        <Image
+                            src={imgBasGauche}
+                            alt="Artisan"
+                            width={230}
+                            height={240}
+                            quality={85}
+                            class="h-full w-full object-cover object-top"
+                            loading="eager"
+                        />
                     </div>
                     <!-- Petite photo bas-droite -->
-                    <div class="absolute bottom-[80px] right-[-30px] h-[190px] w-[170px] overflow-hidden rounded-3xl shadow-lg z-10">
-                        <Image src={imgBasDroite} alt="Artisan" width={340} height={380} quality={85} class="h-full w-full object-cover object-top" loading="eager" />
+                    <div
+                        class="absolute bottom-[80px] right-[-30px] h-[190px] w-[170px] overflow-hidden rounded-3xl shadow-lg z-10"
+                    >
+                        <Image
+                            src={imgBasDroite}
+                            alt="Artisan"
+                            width={340}
+                            height={380}
+                            quality={85}
+                            class="h-full w-full object-cover object-top"
+                            loading="eager"
+                        />
                     </div>
 
                     <!-- Badge haut gauche : livraison -->
-                    <div class="absolute -left-8 top-[60px] z-40 rounded-2xl border border-primary-100 bg-white px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
-                        <p class="text-xs font-semibold uppercase tracking-wide text-primary-500">Livraison</p>
-                        <p class="mt-0.5 text-xl font-bold text-primary-950">1 à 4 semaines</p>
+                    <div
+                        class="absolute -left-8 top-[60px] z-40 rounded-2xl border border-primary-100 bg-white px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+                    >
+                        <p
+                            class="text-xs font-semibold uppercase tracking-wide text-primary-500"
+                        >
+                            Livraison
+                        </p>
+                        <p class="mt-0.5 text-xl font-bold text-primary-950">
+                            1 à 4 semaines
+                        </p>
                     </div>
 
                     <!-- Badge haut droite : devis gratuit -->
-                    <div class="absolute -right-6 top-[30px] z-40 rounded-2xl bg-primary-500 px-4 py-3 shadow-[0_8px_32px_rgba(58,58,58,0.35)]">
-                        <p class="text-xs font-bold uppercase tracking-wide text-primary-200">100% gratuit</p>
-                        <p class="mt-0.5 text-sm font-bold text-white">Devis sans engagement</p>
+                    <div
+                        class="absolute -right-6 top-[30px] z-40 rounded-2xl bg-primary-500 px-4 py-3 shadow-[0_8px_32px_rgba(58,58,58,0.35)]"
+                    >
+                        <p
+                            class="text-xs font-bold uppercase tracking-wide text-primary-200"
+                        >
+                            100% gratuit
+                        </p>
+                        <p class="mt-0.5 text-sm font-bold text-white">
+                            Devis sans engagement
+                        </p>
                     </div>
 
                     <!-- Badge bas : réponse -->
-                    <div class="absolute -bottom-4 left-[50%] -translate-x-1/2 z-40 rounded-2xl border border-primary-100 bg-white px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
-                        <p class="text-xs font-semibold uppercase tracking-wide text-primary-500">Réponse garantie</p>
-                        <p class="mt-0.5 text-xl font-bold text-primary-950">sous 48h</p>
+                    <div
+                        class="absolute -bottom-4 left-[50%] -translate-x-1/2 z-40 rounded-2xl border border-primary-100 bg-white px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+                    >
+                        <p
+                            class="text-xs font-semibold uppercase tracking-wide text-primary-500"
+                        >
+                            Réponse garantie
+                        </p>
+                        <p class="mt-0.5 text-xl font-bold text-primary-950">
+                            sous 48h
+                        </p>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
-
 </section>
