@@ -8,7 +8,7 @@ import imgBasGauche    from '../../assets/artisan-menuisier-bois.jpeg';
 import imgBasDroite    from '../../assets/artisan-peintre-renovation.jpeg';
 ---
 
-<section id="hero-section" class="relative flex min-h-screen flex-col bg-primary-50">
+<section id="hero-section" class="relative flex h-svh min-h-screen flex-col bg-primary-50">
 
     <!-- Arc background -->
     <div class="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
@@ -33,10 +33,7 @@ import imgBasDroite    from '../../assets/artisan-peintre-renovation.jpeg';
         <div class="arc-halo arc-halo-1"></div>
         <div class="arc-halo arc-halo-2"></div>
         <div class="arc-halo arc-halo-3"></div>
-        <div class="arc-fade-top"></div>
         <div class="arc-fade-bottom"></div>
-        <div class="arc-fade-left"></div>
-        <div class="arc-fade-right"></div>
     </div>
 
 
@@ -45,27 +42,11 @@ import imgBasDroite    from '../../assets/artisan-peintre-renovation.jpeg';
 
             <!-- Colonne gauche : texte -->
             <div>
-                <div data-hero="badge" class="mb-8 inline-flex items-center gap-4 rounded-full border border-primary-200 bg-white px-5 py-2.5 shadow-sm lg:inline-flex">
-                    <span class="flex items-center gap-2 text-sm font-bold text-primary-950">
-                        <span class="relative flex h-2 w-2">
-                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-                            <span class="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-                        </span>
-                        Disponible maintenant
-                    </span>
-                    <span class="h-4 w-px bg-primary-200"></span>
-                    <a href="mailto:romain.gore@outlook.com" class="inline-flex items-center gap-1.5 text-sm text-primary-500 transition-colors hover:text-primary-700">
-                        Démarrer un projet
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </a>
-                </div>
 
                 <h1 data-hero="title" class="font-serif font-semibold leading-[1.05] text-primary-950">
-                    <span class="block text-6xl sm:text-7xl lg:text-7xl xl:text-8xl">Votre métier</span>
-                    <span class="block text-6xl sm:text-7xl lg:text-7xl xl:text-8xl">mérite un site</span>
-                    <em class="block text-6xl italic sm:text-7xl lg:text-7xl xl:text-8xl bg-gradient-to-b from-primary-950 to-primary-400 bg-clip-text text-transparent">
-                        à sa hauteur.
-                    </em>
+                    <span class="block text-[clamp(3.5rem,7vw,6rem)]">Votre savoir-faire</span>
+                    <span class="block text-[clamp(3.5rem,7vw,6rem)]">mérite</span>
+                    <em id="hero-typewriter" class="block italic text-[clamp(3.5rem,7vw,6rem)] bg-gradient-to-b from-primary-950 to-primary-400 bg-clip-text text-transparent min-h-[1.1em]"></em>
                 </h1>
 
                 <p data-hero="text" class="mt-8 max-w-md text-base leading-relaxed text-primary-800 lg:text-lg">

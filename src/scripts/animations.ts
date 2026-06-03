@@ -1,3 +1,33 @@
+// ── Hero: typewriter ─────────────────────────────────────────
+const words = ["d'être visible.", "d'être connu."];
+const typewriterEl = document.getElementById("hero-typewriter");
+
+if (typewriterEl) {
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function tick() {
+        const current = words[wordIndex];
+        typewriterEl!.textContent = current.slice(0, charIndex);
+
+        if (!deleting && charIndex === current.length) {
+            setTimeout(() => { deleting = true; tick(); }, 2200);
+            return;
+        }
+        if (deleting && charIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(tick, 300);
+            return;
+        }
+        charIndex += deleting ? -1 : 1;
+        setTimeout(tick, deleting ? 40 : 80);
+    }
+
+    setTimeout(tick, 800);
+}
+
 // ── Hero: entrance animations ────────────────────────────────
 const heroItems = document.querySelectorAll<HTMLElement>(
     '[data-hero="badge"], [data-hero="title"], [data-hero="text"], [data-hero="cta"], [data-hero="mosaic"]'
