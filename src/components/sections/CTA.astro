@@ -1,79 +1,130 @@
 ---
+const apiKey = import.meta.env.PUBLIC_API_KEY_FORM;
 ---
 
-<section id="contact" class="bg-white py-20 sm:py-28">
+<section id="contact" class="bg-primary-50 py-20 sm:py-28">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div
-            class="relative overflow-hidden rounded-2xl bg-primary-950 px-8 py-16 shadow-xl sm:px-16 sm:py-20"
-        >
-            <!-- Decorative circles -->
-            <div
-                class="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-primary-800/50"
-                aria-hidden="true"
-            >
-            </div>
-            <div
-                class="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-primary-900/60"
-                aria-hidden="true"
-            >
-            </div>
+        <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
 
-            <div class="relative z-10 mx-auto max-w-2xl text-center">
-                <span
-                    class="text-xs font-semibold uppercase tracking-[0.15em] text-primary-400"
-                >
+            <!-- Colonne gauche : texte -->
+            <div>
+                <span class="text-xs font-semibold uppercase tracking-[0.15em] text-primary-500">
                     Contact
                 </span>
-                <h2
-                    class="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl"
-                >
+                <h2 class="mt-4 font-serif text-4xl font-semibold leading-tight text-primary-950 sm:text-5xl">
                     Prêt à avoir un site<br />
                     qui travaille pour vous ?
                 </h2>
-                <p class="mt-6 text-lg leading-relaxed text-primary-300">
-                    Envoyez-moi un message, je réponds sous 48h. Pas
-                    d'engagement — juste un échange pour voir si je peux vous
-                    aider.
+                <p class="mt-6 text-lg leading-relaxed text-primary-700">
+                    Envoyez-moi un message, je réponds sous 48h. Pas d'engagement — juste un échange pour voir si je peux vous aider.
                 </p>
-
-                <div
-                    class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-                >
-                    <a
-                        href="mailto:romain.gore@outlook.com"
-                        class="inline-flex items-center gap-2 rounded-sm bg-primary-500 px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-primary-400"
-                    >
-                        <svg
-                            class="h-4 w-4"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-                            ></path>
-                            <path
-                                d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-                            ></path>
-                        </svg>
-                        romain.gore@outlook.com
-                    </a>
-                    <a
-                        href="#offres"
-                        class="text-sm font-semibold text-primary-300 underline-offset-4 hover:text-white hover:underline"
-                    >
-                        <span class="inline-flex items-center gap-1.5">
-                            Voir les offres
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </span>
-                    </a>
-                </div>
-
-                <!-- Trust line -->
-                <p class="mt-10 text-sm text-primary-500">
-                    Devis gratuit · Réponse sous 48h · Pas d'engagement
-                </p>
+                <ul class="mt-8 space-y-3">
+                    {[
+                        "Devis gratuit, sans engagement",
+                        "Réponse sous 48h",
+                        "Un seul interlocuteur du début à la fin",
+                    ].map((item) => (
+                        <li class="flex items-center gap-3 text-sm text-primary-700">
+                            <svg class="h-4 w-4 shrink-0 text-primary-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            {item}
+                        </li>
+                    ))}
+                </ul>
             </div>
+
+            <!-- Colonne droite : formulaire -->
+            <div>
+                <form id="contact-form" class="space-y-5">
+                    <input type="hidden" name="access_key" value={apiKey} />
+                    <input type="hidden" name="subject" value="Nouveau message — romain-gore.fr" />
+                    <input type="checkbox" name="botcheck" class="hidden" />
+
+                    <div>
+                        <label for="name" class="mb-1.5 block text-sm font-medium text-primary-900">Nom</label>
+                        <input
+                            id="name"
+                            type="text"
+                            name="name"
+                            required
+                            placeholder="Jean Dupont"
+                            class="w-full rounded-lg border border-primary-200 bg-white px-4 py-3 text-sm text-primary-950 placeholder-primary-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+                        />
+                    </div>
+
+                    <div>
+                        <label for="email" class="mb-1.5 block text-sm font-medium text-primary-900">Email</label>
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            required
+                            placeholder="jean@exemple.fr"
+                            class="w-full rounded-lg border border-primary-200 bg-white px-4 py-3 text-sm text-primary-950 placeholder-primary-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+                        />
+                    </div>
+
+                    <div>
+                        <label for="message" class="mb-1.5 block text-sm font-medium text-primary-900">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            required
+                            rows="5"
+                            placeholder="Décrivez votre projet en quelques mots..."
+                            class="w-full resize-none rounded-lg border border-primary-200 bg-white px-4 py-3 text-sm text-primary-950 placeholder-primary-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+                        ></textarea>
+                    </div>
+
+                    <div class="flex items-center justify-between gap-4">
+                        <p id="form-status" class="text-sm"></p>
+                        <button
+                            type="submit"
+                            id="form-submit"
+                            class="rounded-sm bg-primary-500 px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 disabled:opacity-50"
+                        >
+                            Envoyer
+                        </button>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </div>
 </section>
+
+<script>
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+    const status = document.getElementById("form-status") as HTMLParagraphElement;
+    const submit = document.getElementById("form-submit") as HTMLButtonElement;
+
+    form?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        submit.disabled = true;
+        submit.textContent = "Envoi...";
+        status.textContent = "";
+
+        const data = Object.fromEntries(new FormData(form));
+
+        const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        });
+
+        const json = await res.json();
+
+        if (json.success) {
+            status.textContent = "Message envoyé ! Je vous réponds sous 48h.";
+            status.className = "text-sm text-green-600";
+            form.reset();
+        } else {
+            status.textContent = "Erreur, réessayez ou écrivez-moi directement.";
+            status.className = "text-sm text-red-600";
+        }
+
+        submit.disabled = false;
+        submit.textContent = "Envoyer";
+    });
+</script>
