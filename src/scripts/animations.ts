@@ -1,5 +1,5 @@
 // ── Hero: typewriter ─────────────────────────────────────────
-const words = ["d'être visible.", "d'être connu."];
+const words = ["d'être visible."];
 const typewriterEl = document.getElementById("hero-typewriter");
 
 if (typewriterEl) {

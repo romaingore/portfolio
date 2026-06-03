@@ -123,24 +123,24 @@
 
 @keyframes halo1 {
     0%    { opacity: 0; }
-    4%    { opacity: 1; }
-    29%   { opacity: 1; }
+    10%   { opacity: 1; }
+    25%   { opacity: 1; }
     33%   { opacity: 0; }
     100%  { opacity: 0; }
 }
 @keyframes halo2 {
     0%    { opacity: 0; }
     33%   { opacity: 0; }
-    37%   { opacity: 1; }
-    62%   { opacity: 1; }
+    43%   { opacity: 1; }
+    58%   { opacity: 1; }
     66%   { opacity: 0; }
     100%  { opacity: 0; }
 }
 @keyframes halo3 {
     0%    { opacity: 0; }
     66%   { opacity: 0; }
-    70%   { opacity: 1; }
-    95%   { opacity: 1; }
+    76%   { opacity: 1; }
+    92%   { opacity: 1; }
     100%  { opacity: 0; }
 }
 
