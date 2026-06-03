@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://romain-gore.fr/sitemap-index.xml
