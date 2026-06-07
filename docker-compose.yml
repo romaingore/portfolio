@@ -8,9 +8,10 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.portfolio.rule=Host(`romain-gore.fr`, `www.romain-gore.fr`)"
+      - "traefik.http.routers.portfolio.rule=Host(`romain-gore.fr`) || Host(`www.romain-gore.fr`)"
       - "traefik.http.routers.portfolio.entrypoints=websecure"
-      - "traefik.http.routers.portfolio.tls.certresolver=myresolver"
+      - "traefik.http.routers.portfolio.tls=true"
+      - "traefik.http.routers.portfolio.tls.certresolver=ovhcloud"
     networks:
       - web
 
